@@ -24,6 +24,10 @@ public class Diem {
     {
         return (double ) Math.sqrt(Math.pow(point2.getX()-this.getX(),2)+Math.pow(point2.getY()-this.getY(),2));
     }
+    public double  tinhBinhPhuongKhoangCach(Diem point2)
+    {
+        return (double ) Math.pow(point2.getX()-this.getX(),2)+Math.pow(point2.getY()-this.getY(),2);
+    }
 
     double  x;
     double  y;

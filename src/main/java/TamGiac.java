@@ -39,7 +39,7 @@ public class TamGiac {
         double  d2=diemA.tinhKhoangCach(diemC);
         double  d3=diemB.tinhKhoangCach(diemC);
 
-        return (d1<d2+d3&&d2<d1+d3&d3>d1+d2);//true neu la tam giac
+        return (d1<d2+d3&&d2<d1+d3&&d3<d1+d2);//true neu la tam giac
 
     }
 
@@ -49,14 +49,19 @@ public class TamGiac {
         double  a=diemA.tinhKhoangCach(diemB);
         double  b=diemA.tinhKhoangCach(diemC);
         double  c=diemB.tinhKhoangCach(diemC);
+
+        double aa=diemA.tinhBinhPhuongKhoangCach(diemB);
+        double bb=diemA.tinhBinhPhuongKhoangCach(diemC);
+        double cc=diemB.tinhBinhPhuongKhoangCach(diemC);
+
         if(KiemTraTamGiac()){
-            if( a*a==b*b+c*c || b*b==a*a+c*c || c*c== a*a+b*b)
+            if( aa==bb+cc || bb==aa+cc || cc== aa+bb)
                 return "Tam giac vuong";
             else if(a==b && b==c)
                 return "Tam giac deu";
             else if(a==b || a==c || b==c)
                 return "Tam giac can";
-            else if(a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a+b*b)
+            else if(aa > bb+cc || bb > aa+cc || cc > aa+bb)
                 return "Tam giac tu";
             else
                 return "Tam giac nhon";
